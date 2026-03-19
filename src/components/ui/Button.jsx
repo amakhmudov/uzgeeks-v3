@@ -15,8 +15,9 @@ export function Button({
   children,
   ...rest
 }) {
+  const defaultProps = Tag === 'button' ? { type: 'button' } : {}
   return (
-    <Tag href={href} className={`${variantClasses[variant]} ${className}`.trim()} {...rest}>
+    <Tag href={href} {...defaultProps} className={`${variantClasses[variant]} ${className}`.trim()} {...rest}>
       {children}
     </Tag>
   )
@@ -24,7 +25,7 @@ export function Button({
 
 Button.propTypes = {
   variant: PropTypes.oneOf(['primary', 'outline']),
-  as: PropTypes.elementType,
+  as: PropTypes.oneOf(['button', 'a']),
   href: PropTypes.string,
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
