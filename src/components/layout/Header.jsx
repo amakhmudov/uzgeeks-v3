@@ -20,7 +20,7 @@ export function Header({ transparent = false }) {
       <div className="flex items-center gap-5 text-[18px] leading-normal tracking-[0.36px]">
         <a href="#kirish" className="capitalize hover:text-brand transition-colors">Kirish</a>
         <span className="opacity-50" aria-hidden="true">/</span>
-        <Button variant="primary">Ro'yhattan o'tish</Button>
+        <Button variant="primary">Ro&apos;yhattan o&apos;tish</Button>
       </div>
     </header>
   )

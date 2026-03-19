@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { imgBg, imgHeroDots, imgAboutDots, imgConference, imgPartners } from '@/assets'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
@@ -6,11 +7,13 @@ import { SpeakerCard } from '@/components/ui/SpeakerCard'
 import { speakers, eventTabs, upcomingEvent } from '@/data/events'
 
 export default function Home() {
+  const [activeTab, setActiveTab] = useState(eventTabs[1].label)
+
   return (
     <div className="bg-white overflow-x-hidden">
 
       {/* ═══════════════ HERO ═══════════════ */}
-      <section className="relative h-[980px]">
+      <section className="relative min-h-[600px] md:h-[980px]">
         {/* Background image + dark overlay */}
         <div className="absolute inset-0">
           <img src={imgBg} alt="" className="w-full h-full object-cover" />
@@ -50,9 +53,10 @@ export default function Home() {
               <button
                 key={tab.label}
                 type="button"
-                aria-pressed={tab.active}
+                aria-pressed={activeTab === tab.label}
+                onClick={() => setActiveTab(tab.label)}
                 className={`px-4 py-[10px] rounded-[4px] text-[14px] font-semibold uppercase tracking-[0.28px] whitespace-nowrap transition-colors ${
-                  tab.active ? 'bg-brand text-white' : 'text-body hover:bg-gray-100'
+                  activeTab === tab.label ? 'bg-brand text-white' : 'text-body hover:bg-gray-100'
                 }`}
               >
                 {tab.label}
@@ -102,7 +106,7 @@ export default function Home() {
         </div>
 
         {/* Full-width conference photo */}
-        <div className="relative mt-24 h-[800px]">
+        <div className="relative mt-24 h-[300px] md:h-[800px]">
           <img src={imgConference} alt="UzGeeks conference" className="w-full h-full object-cover" />
           <img src={imgAboutDots} alt="" className="absolute bottom-4 left-1/2 -translate-x-1/2 h-[10px] w-auto" />
         </div>
