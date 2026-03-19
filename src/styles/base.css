@@ -1,6 +1,6 @@
 html,
 body {
-  @apply h-dvh;
+  @apply min-h-dvh;
 }
 
 #root {

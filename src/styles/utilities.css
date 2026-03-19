@@ -1,7 +1,7 @@
-@utility bd {
-  @apply border border-red-500;
-}
-
 @utility container {
   @apply px-4 mx-auto max-w-[var(--container-width)];
+}
+
+@utility content-container {
+  @apply max-w-[var(--content-width)] mx-auto px-4;
 }

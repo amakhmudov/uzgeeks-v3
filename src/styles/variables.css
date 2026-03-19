@@ -1,3 +1,13 @@
 @theme {
   --container-width: 1440px;
+  --content-width: 928px;
+
+  /* Colors */
+  --color-brand: #38bfc4;
+  --color-body: #1e1e1e;
+  --color-muted: rgba(0, 0, 0, 0.4);
+  --color-divider: #d9d9d9;
+
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-nunito: "Nunito Sans", sans-serif;
 }
