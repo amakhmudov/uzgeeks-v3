@@ -1,4 +1,4 @@
-export { default as imgBg } from './images/bg-hero.jpg'
+export { default as imgBg } from './images/bg-hero.webp'
 export { default as imgLogo } from './images/logo.svg'
 export { default as imgHeroDots } from './images/dots-hero.svg'
 export { default as imgAboutDots } from './images/dots-about.svg'
