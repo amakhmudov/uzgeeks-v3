@@ -1,0 +1,61 @@
+<h2>Pick a header/main/footer layout</h2>
+<p class="subtitle">Choose the structure that fits best for uzgeeks</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:16px;background:#f8f9fa;border-radius:6px;">
+      <div style="background:#6366f1;color:#fff;padding:10px 16px;border-radius:4px;display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;font-size:13px;font-weight:600;">
+        <span>⬡ uzgeeks</span>
+        <span style="font-weight:400;opacity:.8;">Home &nbsp; About &nbsp; Work &nbsp; Contact</span>
+      </div>
+      <div style="background:#fff;border:1px solid #e5e7eb;border-radius:4px;padding:24px 16px;min-height:80px;text-align:center;font-size:12px;color:#9ca3af;margin-bottom:8px;">main content</div>
+      <div style="background:#1f2937;color:#9ca3af;padding:8px 16px;border-radius:4px;font-size:11px;display:flex;justify-content:space-between;">
+        <span>© 2024 uzgeeks</span><span>Links</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Sticky Top Nav</h3>
+      <p>Header sticks to the top as you scroll. Horizontal nav links. Full-width footer at the bottom. Best for content-heavy sites.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:16px;background:#f8f9fa;border-radius:6px;">
+      <div style="background:#6366f1;color:#fff;padding:16px;border-radius:4px;text-align:center;margin-bottom:8px;">
+        <div style="font-size:20px;font-weight:700;">⬡ uzgeeks</div>
+        <div style="font-size:11px;opacity:.8;margin-top:4px;">Home &nbsp;·&nbsp; About &nbsp;·&nbsp; Work &nbsp;·&nbsp; Contact</div>
+      </div>
+      <div style="background:#fff;border:1px solid #e5e7eb;border-radius:4px;padding:24px 16px;min-height:80px;text-align:center;font-size:12px;color:#9ca3af;margin-bottom:8px;">main content</div>
+      <div style="background:#1f2937;color:#9ca3af;padding:10px 16px;border-radius:4px;font-size:11px;text-align:center;">
+        © 2024 uzgeeks · Built with React
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Centered Hero Header</h3>
+      <p>Logo and nav centered, taller header with more presence. Good for portfolios and personal brands.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:16px;background:#f8f9fa;border-radius:6px;display:flex;gap:8px;">
+      <div style="width:60px;background:#1f2937;border-radius:4px;padding:10px 8px;display:flex;flex-direction:column;gap:6px;align-items:center;">
+        <div style="color:#6366f1;font-weight:700;font-size:13px;">⬡</div>
+        <div style="width:32px;height:2px;background:#6366f1;border-radius:2px;"></div>
+        <div style="font-size:9px;color:#9ca3af;text-align:center;">Home</div>
+        <div style="font-size:9px;color:#9ca3af;text-align:center;">About</div>
+        <div style="font-size:9px;color:#9ca3af;text-align:center;">Work</div>
+        <div style="font-size:9px;color:#9ca3af;text-align:center;">Contact</div>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:8px;">
+        <div style="background:#6366f1;color:#fff;padding:8px 12px;border-radius:4px;font-size:11px;font-weight:600;">uzgeeks</div>
+        <div style="background:#fff;border:1px solid #e5e7eb;border-radius:4px;padding:16px;flex:1;font-size:11px;color:#9ca3af;text-align:center;">main content</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Sidebar Nav + Top Bar</h3>
+      <p>Left sidebar for navigation, thin top bar for branding. App-like feel. Good for dashboards or multi-section projects.</p>
+    </div>
+  </div>
+
+</div>
