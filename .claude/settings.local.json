@@ -4,7 +4,12 @@
       "Bash(.gitignore:*)",
       "Bash(README.md:*)",
       "Bash(npx sharp-cli:*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(npm install:*)",
+      "Bash(tree:*)",
+      "Bash(ls:*)",
+      "Bash(curl:*)",
+      "Bash(npx next build)"
     ]
   }
 }

@@ -1,12 +1,11 @@
-import {
-  speakerAziz,
-  speakerMohinur,
-  speakerAdham,
-  speakerZarifjon,
-  speakerMuhamadali,
-} from '@/assets'
+import speakerAziz from "@/assets/images/speaker-aziz.jpg";
+import speakerMohinur from "@/assets/images/speaker-mohinur.jpg";
+import speakerAdham from "@/assets/images/speaker-adham.jpg";
+import speakerZarifjon from "@/assets/images/speaker-zarifjon.jpg";
+import speakerMuhamadali from "@/assets/images/speaker-muhamadali.jpg";
+import type { Speaker, Event } from "@/types/events";
 
-export const speakers = [
+export const speakers: Speaker[] = [
   {
     time: "14:00 - 14:30",
     talk: "Data Preparation",
@@ -42,16 +41,16 @@ export const speakers = [
     role: "Al/ML Engineer, Mohirdev, Dialix AI, CEO & Co-founder",
     img: speakerMuhamadali,
   },
-]
+];
 
-export const eventTabs = [
-  { label: "Barcha tadbirlar", active: false },
-  { label: "navbatdagi tadbir", active: true },
-  { label: "Tanlangan tadbirlar", active: false },
-  { label: "Tadbirda qatnashish", active: false },
-]
+export const eventTabs: string[] = [
+  "Barcha tadbirlar",
+  "Navbatdagi tadbir",
+  "Tanlangan tadbirlar",
+  "Tadbirda qatnashish",
+];
 
-export const upcomingEvent = {
+export const upcomingEvent: Event = {
   date: "27-yanvar, 14:00",
   location: "Toshkent shahar, Mirzo Ulug'bek tumani, Muminov ko'chasi 4A.",
-}
+};
