@@ -6,7 +6,7 @@ export function SpeakerCard({ time, talk, name, role, img }) {
       <div className="flex gap-6 items-center">
         {/* Avatar */}
         <div className="shrink-0 w-[126px] h-[126px] rounded-full overflow-hidden">
-          <img src={img} alt="" className="w-full h-full object-cover" />
+          <img src={img} alt={name} className="w-full h-full object-cover" />
         </div>
         {/* Info */}
         <div className="flex flex-col gap-6 flex-1 min-w-0">

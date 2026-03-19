@@ -17,7 +17,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/70" />
         </div>
 
-        <div className="relative z-10 h-full flex flex-col max-w-[1400px] mx-auto px-4">
+        <div className="relative z-10 h-full flex flex-col container">
           <Header transparent />
 
           {/* Hero content */}
@@ -50,6 +50,7 @@ export default function Home() {
               <button
                 key={tab.label}
                 type="button"
+                aria-pressed={tab.active}
                 className={`px-4 py-[10px] rounded-[4px] text-[14px] font-semibold uppercase tracking-[0.28px] whitespace-nowrap transition-colors ${
                   tab.active ? 'bg-brand text-white' : 'text-body hover:bg-gray-100'
                 }`}
@@ -82,7 +83,7 @@ export default function Home() {
       {/* ═══════════════ ABOUT ═══════════════ */}
       <section id="haqida" className="pt-[112px]">
         {/* Heading + stats */}
-        <div className="max-w-[1400px] mx-auto px-4 text-center">
+        <div className="container text-center">
           <h2 className="h1 text-brand">UzGeeks nima?</h2>
           <div className="flex justify-center gap-20 mt-[83px] text-body">
             <div className="flex flex-col gap-4">
@@ -115,7 +116,7 @@ export default function Home() {
             UzGeeks meetuplari onlayn tarzda ijtimoiy tarmoqlarda efirga uzatiladi. Ushbu tadbirlarda qatnashish mutloq bepul bo&apos;lib, xohlagan ishtirokchi o&apos;z shaxsiy professional tajribasidan kelib chiqqan holda biror-bir mavzu bo&apos;yicha taqdimot o&apos;tkazib berishi, yoki oddiy eshituvchi-ishtirokchi sifatida qatnashishi mumkin.
           </p>
           <p className="text-[18px] leading-[1.5] tracking-[0.36px]">
-            UzGeeks doirasida 7 yildan beri har oyda bir marta ochiq muloqot, bilim va malakalar bilan bo&apos;lishish maqsadida meetup-tadbirlar tashkil etilada.
+            UzGeeks doirasida 7 yildan beri har oyda bir marta ochiq muloqot, bilim va malakalar bilan bo&apos;lishish maqsadida meetup-tadbirlar tashkil etiladi.
           </p>
         </div>
 
@@ -127,7 +128,7 @@ export default function Home() {
 
       {/* ═══════════════ PARTNERS ═══════════════ */}
       <section id="hamkorlar" className="py-[112px]">
-        <div className="max-w-[1400px] mx-auto px-4">
+        <div className="container">
           <div className="text-center">
             <h2 className="h1 text-brand">Hamkorlarimiz</h2>
             <p className="text-lead text-body mt-6">

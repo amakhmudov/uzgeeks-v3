@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(.gitignore:*)",
-      "Bash(README.md:*)"
+      "Bash(README.md:*)",
+      "Bash(npx sharp-cli:*)",
+      "Bash(npm run:*)"
     ]
   }
 }
