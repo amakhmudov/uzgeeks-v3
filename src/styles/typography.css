@@ -1,6 +1,6 @@
 @layer base {
   body {
-    @apply font-nunito;
+    @apply font-dm-sans text-base;
   }
 
   h1,
@@ -20,12 +20,12 @@
 
   h1,
   .h1 {
-    @apply font-light text-5xl;
+    @apply font-normal text-5xl leading-none;
   }
 
   h2,
   .h2 {
-    @apply font-extralight text-4xl;
+    @apply font-light text-4xl leading-snug;
   }
 
   h3,

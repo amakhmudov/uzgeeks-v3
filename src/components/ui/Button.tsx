@@ -9,14 +9,12 @@ type ButtonProps = {
   children: React.ReactNode;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
-const baseClasses =
-  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2";
+const baseClasses = "rounded cursor-pointer leading-none h-12";
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    "bg-brand text-white px-8 py-4 rounded-[--radius-sm] text-[--font-size-base] hover:opacity-90 transition-opacity focus-visible:ring-brand",
-  outline:
-    "border border-white text-white px-8 py-[--spacing-btn-y] rounded-[--radius-sm] text-[--font-size-base] hover:bg-white/10 transition-colors focus-visible:ring-white",
+    "bg-brand border border-brand text-white px-4 hover:bg-brand/80 transition-opacity",
+  outline: "border text-body px-4 hover:bg-white/10 transition-colors",
 };
 
 export function Button({

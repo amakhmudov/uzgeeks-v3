@@ -1,17 +1,29 @@
 import type { Metadata } from "next";
-import { Montserrat, Nunito_Sans } from "next/font/google";
+import { Montserrat, Nunito_Sans, Inter, DM_Sans } from "next/font/google";
 import "./globals.css";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["200", "300", "400", "500", "600", "700"],
-  variable: "--font-montserrat-next",
+  variable: "--font-montserrat",
 });
 
 const nunitoSans = Nunito_Sans({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
-  variable: "--font-nunito-next",
+  variable: "--font-nunito",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-inter",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-dm-sans",
 });
 
 export const metadata: Metadata = {
@@ -42,7 +54,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="uz" className={`${montserrat.variable} ${nunitoSans.variable}`}>
+    <html
+      lang="uz"
+      className={`${montserrat.variable} ${nunitoSans.variable} ${inter.variable} ${dmSans.variable}`}
+    >
       <body>{children}</body>
     </html>
   );

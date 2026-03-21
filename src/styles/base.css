@@ -1,3 +1,9 @@
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+}
+
 html,
 body {
   @apply min-h-dvh;
@@ -9,4 +15,50 @@ main {
 
 footer {
   @apply shrink-0;
+}
+
+.header {
+  @apply bg-brand-dark fixed w-full py-3 top-0 z-10 backdrop-blur-sm border-b border-brand/20;
+
+  > .container {
+    @apply container relative media-info justify-between z-10;
+  }
+}
+
+.hero-section {
+  @apply text-white relative min-h-[90dvh] hv-center py-20 z-0 before:content-[''] before:block before:absolute before:inset-0 before:bg-gradient-to-b before:from-brand-darkest before:via-brand-dark/60 before:to-brand-darkest before:z-10;
+
+  img {
+    @apply z-0;
+  }
+
+  .container {
+    @apply relative z-10 flex flex-col items-center text-center space-y-4 max-w-4xl text-balance;
+  }
+}
+
+.marquee-section {
+  @apply media-info gap-x-3 overflow-hidden py-4 bg-brand select-none transition-all will-change-transform font-montserrat font-bold;
+}
+
+.marquee-list {
+  @apply flex justify-between shrink-0 min-w-full;
+
+  animation: scroll 60s linear infinite;
+
+  li {
+    @apply text-xs media-info gap-x-3 uppercase tracking-widest whitespace-nowrap before:content-['✦'];
+  }
+}
+
+.divider {
+  @apply media-info justify-center;
+
+  span {
+    @apply size-2 rounded-full bg-black/20;
+  }
+
+  &.is-light span {
+    @apply bg-white/20;
+  }
 }

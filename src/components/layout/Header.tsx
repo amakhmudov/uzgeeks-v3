@@ -11,47 +11,43 @@ export function Header({ transparent = false }: HeaderProps) {
   const textColor = transparent ? "text-white" : "text-body";
 
   return (
-    <header
-      className={`flex items-center justify-between h-16 shrink-0 pt-3 ${textColor}`}
-    >
-      <div className="flex items-center gap-16">
-        <Link href="/" className="block">
-          <Image src={imgLogo} alt="UzGeeks" className="h-16 w-auto" />
-        </Link>
-        <nav className="text-[--font-size-base] leading-normal tracking-[--tracking-wide]">
-          <ul className="flex gap-[--gap-nav] list-none">
-            <li>
-              <Link
-                href="/events"
-                className="capitalize hover:text-brand transition-colors"
-              >
-                Tadbirlar
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/about"
-                className="hover:text-brand transition-colors"
-              >
-                UzGeeks haqida
-              </Link>
-            </li>
-            <li>
-              <a href="#" className="hover:text-brand transition-colors">
-                Yordam.uz
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div className="flex items-center gap-5 text-[--font-size-base] leading-normal tracking-[--tracking-wide]">
-        <a href="#" className="capitalize hover:text-brand transition-colors">
-          Kirish
-        </a>
-        <span className="opacity-50" aria-hidden="true">
-          /
-        </span>
-        <Button variant="primary">Ro&apos;yhattan o&apos;tish</Button>
+    <header className="header">
+      <div className={`container ${textColor}`}>
+        <div className="media-info gap-x-8">
+          <Link href="/" className="block">
+            <Image src={imgLogo} alt="UzGeeks" className="h-12 w-auto" />
+          </Link>
+
+          <nav>
+            <ul className="media-info gap-x-4">
+              <li>
+                <Link href="/events" className="hover:text-brand transition">
+                  Tadbirlar
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="hover:text-brand transition">
+                  UzGeeks haqida
+                </Link>
+              </li>
+              <li>
+                <a href="#" className="hover:text-brand transition">
+                  Yordam.uz
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <ul className="media-info gap-x-4">
+          <a href="#" className="hover:text-brand transition">
+            Kirish
+          </a>
+          <span className="opacity-50" aria-hidden="true">
+            /
+          </span>
+          <Button variant="primary">Ro&apos;yhattan o&apos;tish</Button>
+        </ul>
       </div>
     </header>
   );

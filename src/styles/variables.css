@@ -1,77 +1,22 @@
+:root {
+  /* --header-height: 80px; */
+  --border-default: rgba(0, 0, 0, 0.1);
+  --gap: 0.5rem;
+}
+
 @theme {
   --container-width: 1400px;
-  --content-width: 928px;
 
-  /* Colors */
   --color-brand: #38bfc4;
+  --color-brand-dark: color-mix(in srgb, var(--color-brand) 10%, black);
+  --color-brand-darkest: color-mix(in srgb, var(--color-brand) 5%, black);
   --color-body: #1e1e1e;
   --color-muted: rgba(0, 0, 0, 0.4);
   --color-divider: #d9d9d9;
+  --color-border: var(--border-default);
 
   --font-montserrat: var(--font-montserrat-next);
   --font-nunito: var(--font-nunito-next);
-
-  /* Typography Scale */
-  --font-size-xs: 14px;
-  --font-size-sm: 16px;
-  --font-size-base: 18px;
-  --font-size-lg: 20px;
-  --font-size-xl: 24px;
-  --font-size-2xl: 32px;
-  --font-size-3xl: 40px;
-  --font-size-4xl: 48px;
-
-  /* Line Heights */
-  --line-height-tight: 1.2;
-  --line-height-normal: 1.5;
-  --line-height-relaxed: 1.75;
-
-  /* Letter Spacing */
-  --tracking-tight: 0.28px;
-  --tracking-normal: 0.32px;
-  --tracking-wide: 0.36px;
-
-  /* Spacing Scale */
-  --spacing-2: 8px;
-  --spacing-3: 12px;
-  --spacing-4: 16px;
-  --spacing-5: 20px;
-  --spacing-6: 24px;
-  --spacing-9: 36px;
-  --spacing-10: 40px;
-  --spacing-11: 44px;
-  --spacing-12: 48px;
-  --spacing-16: 64px;
-  --spacing-20: 80px;
-  --spacing-section-sm: 83px;
-  --spacing-section-md: 88px;
-  --spacing-section: 112px;
-  --spacing-section-lg: 180px;
-
-  /* Padding/Button Spacing */
-  --spacing-btn-y: 15px;
-  --spacing-btn-y-sm: 10px;
-
-  /* Border Radius */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-full: 9999px;
-
-  /* Shadows */
-  --shadow-card: 0px 1px 30px 0px rgba(0, 0, 0, 0.1);
-
-  /* Dimensions */
-  --size-avatar-lg: 126px;
-  --size-button-md: 214px;
-  --size-hero-min: 600px;
-  --size-hero-md: 980px;
-  --size-hero-text-max: 692px;
-  --size-photo-sm: 300px;
-  --size-photo-md: 800px;
-  --size-dots-sm: 8px;
-  --size-dots-md: 10px;
-
-  /* Navigation spacing */
-  --gap-nav: 108px;
+  --font-inter: var(--font-inter-next);
+  --font-dm-sans: var(--font-dm-sans-next);
 }
