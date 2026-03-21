@@ -16,9 +16,9 @@ const items = [
   "Mentorlik",
 ];
 
-function MarqueeGroup() {
+function MarqueeGroup({ ariaHidden }: { ariaHidden?: true }) {
   return (
-    <ul className="marquee-list">
+    <ul className="marquee-list" aria-hidden={ariaHidden}>
       {items.map((item, i) => (
         <li key={i}>{item}</li>
       ))}
@@ -28,9 +28,9 @@ function MarqueeGroup() {
 
 export function MarqueeSection() {
   return (
-    <div className="marquee-section" aria-hidden="true">
+    <div className="marquee-section">
       <MarqueeGroup />
-      <MarqueeGroup />
+      <MarqueeGroup ariaHidden />
     </div>
   );
 }
