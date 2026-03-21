@@ -9,12 +9,11 @@ type ButtonProps = {
   children: React.ReactNode;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
-const baseClasses = "rounded cursor-pointer leading-none h-12";
+const baseClasses = "rounded cursor-pointer leading-none h-12 transition";
 
 const variantClasses: Record<ButtonVariant, string> = {
-  primary:
-    "bg-brand border border-brand text-white px-4 hover:bg-brand/80 transition-opacity",
-  outline: "border text-body px-4 hover:bg-white/10 transition-colors",
+  primary: "bg-brand border border-brand text-white px-4 hover:bg-brand/80",
+  outline: "border text-body px-4 hover:bg-white/10",
 };
 
 export function Button({
