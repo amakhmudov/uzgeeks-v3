@@ -25,7 +25,7 @@
 
   h2,
   .h2 {
-    @apply font-light text-4xl leading-snug;
+    @apply text-4xl leading-snug;
   }
 
   h3,
@@ -44,5 +44,17 @@
 
   .text-date {
     @apply text-sm;
+  }
+
+  .text-author {
+    @apply text-xs font-montserrat font-bold tracking-widest uppercase;
+  }
+
+  blockquote {
+    @apply border-l-4 border-brand pl-4 space-y-4;
+
+    p {
+      @apply font-serif italic text-balance;
+    }
   }
 }

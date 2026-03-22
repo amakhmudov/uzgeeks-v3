@@ -26,7 +26,7 @@ footer {
 }
 
 .hero-section {
-  @apply text-white relative min-h-[90dvh] hv-center py-20 z-0 before:content-[''] before:block before:absolute before:inset-0 before:bg-gradient-to-b before:from-brand-darkest before:via-brand-dark/60 before:to-brand-darkest before:z-10;
+  @apply text-white relative min-h-dvh hv-center py-20 z-0 before:content-[''] before:block before:absolute before:inset-0 before:bg-gradient-to-b before:from-brand-darkest before:via-brand-dark/60 before:to-brand-darkest before:z-10 after:content-[''] after:absolute after:bottom-8 after:left-1/2 after:w-px after:h-10 after:bg-gradient-to-b after:from-transparent after:to-brand after:z-10;
 
   img {
     @apply z-0;
@@ -38,17 +38,25 @@ footer {
 }
 
 .marquee-section {
-  @apply media-info gap-x-3 overflow-hidden py-4 bg-brand select-none transition-all will-change-transform font-montserrat font-bold;
+  @apply media-info gap-x-3 overflow-hidden select-none transition-all will-change-transform font-montserrat font-bold;
 }
 
 .marquee-list {
-  @apply flex justify-between shrink-0 min-w-full;
+  @apply media-info gap-x-3 shrink-0 min-w-full;
 
-  animation: scroll 60s linear infinite;
+  animation: scroll var(--marquee-duration, 60s) linear infinite;
+
+  &.is-reverse {
+    animation: scroll-reverse var(--marquee-duration, 60s) linear infinite;
+  }
 
   li {
-    @apply text-xs media-info gap-x-3 uppercase tracking-widest whitespace-nowrap before:content-['✦'];
+    @apply text-xs media-info gap-x-3 uppercase tracking-widest whitespace-nowrap;
   }
+}
+
+.attendees-logo {
+  @apply hv-center shrink-0 px-4 py-2 border rounded hover:bg-brand hover:text-white transition;
 }
 
 .divider {
@@ -60,5 +68,13 @@ footer {
 
   &.is-light span {
     @apply bg-white/20;
+  }
+}
+
+.section {
+  @apply py-32;
+
+  &.is-dark {
+    @apply bg-border/50;
   }
 }

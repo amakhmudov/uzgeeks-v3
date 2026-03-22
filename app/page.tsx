@@ -6,6 +6,9 @@ import { AboutSection } from "@/components/home/AboutSection";
 import { PartnersSection } from "@/components/home/PartnersSection";
 import { MarqueeSection } from "@/components/home/MarqueeSection";
 import { speakers, eventTabs, upcomingEvent } from "@/data/events";
+import { StatsSection } from "@/components/home/StatsSection";
+import { WhyAttendUzgeeks } from "@/components/home/WhyAttendUzgeeks";
+import { AttendeesWorkAt } from "@/components/home/AttendeesWorkAt";
 
 export default function Home() {
   return (
@@ -13,6 +16,9 @@ export default function Home() {
       <Header transparent />
       <HeroSection event={upcomingEvent} />
       <MarqueeSection />
+      <StatsSection />
+      <WhyAttendUzgeeks />
+      <AttendeesWorkAt />
 
       <EventsSection
         tabs={eventTabs}

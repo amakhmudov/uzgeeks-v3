@@ -1,5 +1,4 @@
 :root {
-  /* --header-height: 80px; */
   --border-default: rgba(0, 0, 0, 0.1);
   --gap: 0.5rem;
 }
@@ -11,8 +10,7 @@
   --color-brand-dark: color-mix(in srgb, var(--color-brand) 10%, black);
   --color-brand-darkest: color-mix(in srgb, var(--color-brand) 5%, black);
   --color-body: #1e1e1e;
-  --color-muted: rgba(0, 0, 0, 0.4);
-  --color-divider: #d9d9d9;
+  --color-muted: color-mix(in srgb, var(--color-body) 60%, transparent);
   --color-border: var(--border-default);
 
   --font-montserrat: var(--font-montserrat-next);
