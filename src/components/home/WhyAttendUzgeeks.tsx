@@ -34,7 +34,7 @@ export function WhyAttendUzgeeks() {
           {items.map((item) => (
             <div
               key={item.number}
-              className="p-8 space-y-8 rounded bg-white shadow-xl shadow-border hover:translate-y-1 hover:shadow-none transition will-change-transform"
+              className="p-8 space-y-8 rounded bg-white shadow-xl shadow-border/50 hover:translate-y-1 hover:shadow-none transition will-change-transform"
             >
               <p className="font-serif text-brand h3 italic">{item.number}</p>
 

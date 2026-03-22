@@ -289,3 +289,118 @@ Point these out without being asked:
 - If something in the request seems overcomplicated, say so and suggest the simpler path
 - Assume strong TS/React knowledge — skip explaining basics
 - One recommendation, not a list of alternatives
+
+---
+
+## Frontend Rules
+
+Rules derived from actual patterns in this codebase. Every rule appears in 2+ components.
+
+---
+
+### Component Structure
+
+- Always use named exports — `export function ComponentName()`. Never default exports.
+- Always define props as `type ComponentNameProps = { ... }` directly above the component. Never use `interface`.
+- Never define a props type when a component takes no props — omit it entirely.
+- Always place static data arrays at module scope, above the component, in `SCREAMING_SNAKE_CASE` (e.g. `ROW_ONE`, `ROW_TWO`). Never inline large arrays inside JSX or inside a component body.
+- Always define single-use sub-components in the same file, above the parent component. Only extract to a separate file when used in 2+ places.
+- Always use `cn()` from `@/lib/utils` when merging className strings in ui primitives. Never use template literals for conditional classes.
+- Prefer `className ?? ""` only in non-ui components where `cn()` is not imported. Prefer `cn()` in all ui components.
+
+---
+
+### CSS Architecture
+
+- Always put complex component-level styles in `src/styles/base.css` using `@apply`, not as inline Tailwind class strings in JSX. If a component selector would need 6+ utility classes, it belongs in `base.css`.
+- Always define reusable layout primitives as `@utility` blocks in `src/styles/utilities.css`, not as components or inline class strings.
+- Always put CSS keyframe animations in `src/styles/keyframes.css`, nowhere else.
+- Always put all `@theme` tokens and CSS custom properties in `src/styles/variables.css`.
+- Never put `@theme` tokens directly in `app/globals.css` — that file is imports only.
+
+---
+
+### Tailwind Patterns
+
+- Always use `space-y-*` for vertical stacking of sibling elements. Never use `mt-*` on individual items inside a stack.
+- Always use the `.media-info` utility class for any flex row with `items-center` and a horizontal gap. Never write `flex items-center gap-x-*` inline in JSX.
+- Always use `.hv-center` for centering in both axes. Never write `grid place-items-center` inline.
+- Always use `.container` for page-width containers. Never write `px-4 mx-auto max-w-[...]` inline.
+- Always use `.section` for full-width page sections with vertical padding. Never write `py-32` directly on a `<section>`.
+- Use `.section.is-dark` for alternate background sections — never a boolean prop on a section component.
+- Always reference CSS custom properties inside Tailwind brackets as `pt-[--token-name]`, not `pt-[var(--token-name)]` (Tailwind v4 syntax).
+- Always use `relative` + `fill` + `object-cover` for full-bleed `next/image` usage. Never use fixed `width`/`height` for hero or photo images.
+- Use `divide-y divide-border` for bordered list separators. Never add `border-b` manually to each item.
+- Use `bg-brand/80` opacity modifier for hover states on brand-colored elements, not a separate `.hover-bg` token.
+
+---
+
+### Typography
+
+- Always use semantic typography classes (`.text-lead`, `.text-author`, `.h1`, `.h2`, `.h3`) — never compose raw Tailwind type utilities like `text-lg font-bold tracking-wide` inline in JSX.
+- Always use `.text-author` for kicker/eyebrow text (label above a heading). It is `text-xs font-montserrat font-bold tracking-widest uppercase`.
+- Always wrap heading content in `<strong>` when the heading needs bold weight — never add `font-bold` as a class on the heading element itself (`h2 > strong` is the pattern).
+- Always use `font-serif italic` for quotes and numbered decorative labels. Never use `font-montserrat` for those.
+- Always use `text-balance` on headings that may wrap. Never leave multi-line headings unstyled.
+- Use `text-brand` for accent text, `text-muted` for secondary text, `text-body` for default text. Never use raw color classes like `text-gray-500`.
+
+---
+
+### TypeScript Patterns
+
+- Always extend `ButtonHTMLAttributes<HTMLButtonElement>` (or the relevant HTML attributes type) in ui primitive props — never manually redeclare `onClick`, `disabled`, `type`, etc.
+- Always cast `style` objects that contain CSS custom properties as `React.CSSProperties`. Never leave the cast off.
+- Always use `type` for union variant types: `type ButtonVariant = "primary" | "outline"`. Never an enum.
+- Always define `Record<VariantType, string>` lookup objects for variant class maps. Never use a switch or ternary for variant → class mapping.
+
+```ts
+// ✅
+const variantClasses: Record<ButtonVariant, string> = {
+  primary: "bg-brand ...",
+  outline: "border ...",
+}
+
+// ❌
+const cls = variant === "primary" ? "bg-brand ..." : "border ..."
+```
+
+---
+
+### Animation & Transition Patterns
+
+- Always use bare `transition` or `transition-colors` — never add `duration-*` or `ease-*` in component classes. The base transition timing is global.
+- Always add `will-change-transform` when using `hover:translate-y-*` or any transform animation.
+- Always drive marquee scroll speed via a CSS custom property (`--marquee-duration`) set as an inline style, not by generating different animation class names.
+- Use `hover:translate-y-1 hover:shadow-none transition will-change-transform` for the card lift effect. This is the standard interactive card pattern.
+- Never use JS-driven animations (framer-motion, GSAP) for effects achievable with CSS keyframes or Tailwind transitions.
+
+---
+
+### Color & Token Usage
+
+- Always derive dark/light variants of brand color with `color-mix(in srgb, var(--color-brand) X%, black)` in CSS variables. Never define separate hardcoded hex values for tints/shades.
+- Always use token-based colors in JSX. The only acceptable raw color class is `bg-white` or `text-white` for pure white on dark backgrounds.
+- Never introduce a new color directly in JSX — if needed twice, define it in `variables.css` first.
+
+---
+
+### Accessibility Patterns
+
+- Always pass `alt=""` on decorative images and `aria-hidden="true"` on decorative DOM elements (dividers, spacers).
+- Always add `aria-label` to icon-only interactive elements (links, buttons with no visible text).
+- Always use native semantic HTML (`<section>`, `<nav>`, `<footer>`, `<blockquote>`, `<ul>`) — never `<div>` when a semantic element exists.
+
+---
+
+### Anti-Patterns — Never Do These
+
+- Never use default exports in any file.
+- Never use `interface` — always `type`.
+- Never write `flex items-center gap-x-*` — use `.media-info`.
+- Never write `py-32` on a section — use `.section`.
+- Never hardcode hex colors or raw Tailwind color names (`text-gray-500`, `bg-slate-800`) in JSX — always tokens.
+- Never add `duration-150 ease-out` to transitions — bare `transition` or `transition-colors` only.
+- Never use `useEffect` for data fetching.
+- Never use responsive prefixes (`md:`, `lg:`) unless there is a genuine layout change. Avoid them by default; the design should work without breakpoints first.
+- Never define animation keyframes inline or in component files — always `keyframes.css`.
+- Never spread large static arrays inline inside JSX — always hoist to module-level constants.

@@ -33,7 +33,7 @@ export function StatsSection() {
             </p>
 
             <footer className="text-author text-brand">
-              Alisher Makhmudov
+              &mdash;&nbsp;Alisher Makhmudov
             </footer>
           </blockquote>
         </div>

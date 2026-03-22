@@ -10,7 +10,7 @@
   --color-brand-dark: color-mix(in srgb, var(--color-brand) 10%, black);
   --color-brand-darkest: color-mix(in srgb, var(--color-brand) 5%, black);
   --color-body: #1e1e1e;
-  --color-muted: color-mix(in srgb, var(--color-body) 60%, transparent);
+  --color-muted: color-mix(in srgb, var(--color-body) 50%, transparent);
   --color-border: var(--border-default);
 
   --font-montserrat: var(--font-montserrat-next);

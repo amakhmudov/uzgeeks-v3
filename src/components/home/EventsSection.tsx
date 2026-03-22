@@ -1,8 +1,10 @@
-import { Calendar, MapPin } from "lucide-react";
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
-import { SpeakerCard } from "@/components/ui/SpeakerCard";
-import { EventTabFilter } from "@/components/home/EventTabFilter";
-import type { Event, Speaker } from "@/types/events";
+import type { Speaker, Event } from "@/types/events";
+import { Check, CircleCheckBig, Plus } from "lucide-react";
 
 type EventsSectionProps = {
   tabs: string[];
@@ -11,44 +13,77 @@ type EventsSectionProps = {
 };
 
 export function EventsSection({ tabs, event, speakers }: EventsSectionProps) {
+  const [activeTab, setActiveTab] = useState(1);
+
   return (
-    <section id="tadbirlar" className="py-[--spacing-section]">
-      <div className="content-container">
-        <h2 className="h1 text-brand text-center">Tadbirlar jadvali</h2>
-
-        <EventTabFilter tabs={tabs} />
-
-        {/* Current event date & location */}
-        <div className="mt-12 flex flex-col gap-4 text-body">
-          <div className="flex items-center gap-3">
-            <Calendar
-              size={20}
-              className="text-brand shrink-0"
-              aria-hidden="true"
-            />
-            <p className="h2">{event.date}</p>
-          </div>
-          <div className="flex items-center gap-3">
-            <MapPin
-              size={20}
-              className="text-brand shrink-0"
-              aria-hidden="true"
-            />
-            <p className="text-lead">{event.location}</p>
-          </div>
+    <section className="section is-dark">
+      <div className="container space-y-8">
+        <div className="space-y-1">
+          <p className="text-author text-brand">Tadbirlarimiz</p>
+          <h2 className="max-w-xl">
+            <strong>Tadbirlarimiz ro'yhati bilan tanishing</strong>
+          </h2>
         </div>
 
-        {/* Speaker cards */}
-        <div className="flex flex-col gap-9 mt-16">
-          {speakers.map((speaker) => (
-            <SpeakerCard key={speaker.name} {...speaker} />
+        <ul className="media-info">
+          {tabs.map((tab, i) => (
+            <li key={tab}>
+              <Button
+                onClick={() => setActiveTab(i)}
+                variant={activeTab === i ? "primary" : "outline"}
+                className={`${activeTab === i ? "" : "bg-white hover:!bg-brand hover:text-white hover:border-brand"}`}
+              >
+                {tab}
+              </Button>
+            </li>
           ))}
-        </div>
+        </ul>
 
-        {/* CTA */}
-        <div className="flex justify-center mt-9">
-          <Button variant="primary">Tadbirda qatnashishni istayman</Button>
-        </div>
+        {activeTab === 1 ? (
+          <section className="space-y-8">
+            <div className="space-y-1">
+              <h2>{event.date}</h2>
+              <p>{event.location}</p>
+            </div>
+
+            <ul className="speaker-list">
+              {speakers.map((speaker) => (
+                <li key={speaker.name} className="speaker-card">
+                  <Image
+                    src={speaker.img}
+                    alt={speaker.name}
+                    width={128}
+                    height={128}
+                    className="shrink-0 object-cover rounded-full border-4 border-white shadow-xl shadow-border"
+                  />
+
+                  <div className="speaker-info">
+                    <div>
+                      <p className="text-date">{speaker.time}</p>
+                      <h3>{speaker.talk}</h3>
+                    </div>
+
+                    <div className="media-info">
+                      <p className="text-author text-brand">{speaker.name}</p>
+                      <p className="text-muted">"{speaker.role}"</p>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+
+            <div className="flex justify-center">
+              <Button variant="primary" className="media-info">
+                <CircleCheckBig size={16} />
+                Tadbirda qatnashishni istayman
+              </Button>
+            </div>
+          </section>
+        ) : (
+          <div className="hv-center py-24">
+            <p className="text-muted">Tez kunda...</p>
+          </div>
+        )}
       </div>
     </section>
   );

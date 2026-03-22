@@ -78,3 +78,15 @@ footer {
     @apply bg-border/50;
   }
 }
+
+.speaker-list {
+  @apply space-y-4;
+}
+
+.speaker-card {
+  @apply media-info gap-x-6 p-6 rounded bg-white overflow-hidden shadow-xl shadow-border/50 hover:translate-y-1 hover:shadow-none transition will-change-transform;
+}
+
+.speaker-info {
+  @apply grow space-y-2;
+}
