@@ -12,3 +12,24 @@ export type Event = {
   date: string;
   location: string;
 };
+
+export type EventCategory = "meetup" | "workshop" | "konferensiya" | "hackathon";
+
+export type EventAvatar = {
+  initial: string;
+  colorToken: string;
+};
+
+export type EventItem = {
+  id: string;
+  day: string;
+  month: string;
+  category: EventCategory;
+  image: StaticImageData;
+  title: string;
+  datetime: string;
+  location: string;
+  attendees: string;
+  avatars: EventAvatar[];
+  speakerLabel: string;
+};

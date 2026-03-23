@@ -23,8 +23,8 @@ export function WhyAttendUzgeeks() {
   return (
     <section className="section is-dark">
       <div className="container space-y-8">
-        <div className="space-y-1">
-          <p className="text-author text-brand">Nimaga qatnashish kerak</p>
+        <div className="title-block">
+          <p>Nimaga qatnashish kerak</p>
           <h2 className="max-w-xl">
             <strong>Nima uchun UzGeeks meetupida qatnashish kerak?</strong>
           </h2>

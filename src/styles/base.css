@@ -90,3 +90,64 @@ footer {
 .speaker-info {
   @apply grow space-y-2;
 }
+
+/* Event cards */
+/* .event-card {
+  @apply rounded-xl overflow-hidden transition will-change-transform hover:translate-y-1;
+  background-color: var(--color-card);
+}
+
+.event-media {
+  @apply relative hv-center aspect-video;
+  background-color: var(--color-card);
+}
+
+.event-date-badge {
+  @apply absolute top-4 left-4 flex flex-col items-center rounded px-2.5 py-1.5 text-white leading-tight;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.event-category-badge {
+  @apply absolute top-4 right-4 text-author text-white rounded px-2.5 py-1.5;
+
+  &.is-meetup {
+    background-color: var(--color-badge-meetup);
+  }
+  &.is-workshop {
+    background-color: var(--color-badge-workshop);
+  }
+  &.is-konferensiya {
+    background-color: var(--color-badge-konferensiya);
+  }
+  &.is-hackathon {
+    background-color: var(--color-badge-hackathon);
+  }
+}
+
+.event-body {
+  @apply p-5 space-y-4;
+}
+
+.event-title {
+  @apply font-montserrat font-semibold text-lg leading-snug text-balance;
+  color: white;
+}
+
+.event-card-footer {
+  @apply flex items-center justify-between pt-4;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.event-avatars {
+  @apply flex;
+}
+
+.event-avatar {
+  @apply size-7 rounded-full border-2 hv-center text-xs font-bold text-white;
+  margin-left: -0.5rem;
+  border-color: var(--color-card);
+
+  &:first-child {
+    margin-left: 0;
+  }
+} */

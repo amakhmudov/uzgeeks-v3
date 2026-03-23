@@ -2,9 +2,12 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import type { Speaker, Event } from "@/types/events";
-import { Check, CircleCheckBig, Plus } from "lucide-react";
+import { CircleCheckBig } from "lucide-react";
+import { EVENTS, SELECTED_EVENTS } from "@/data/events";
+import { EventCard } from "@/components/home/EventCard";
 
 type EventsSectionProps = {
   tabs: string[];
@@ -18,8 +21,8 @@ export function EventsSection({ tabs, event, speakers }: EventsSectionProps) {
   return (
     <section className="section is-dark">
       <div className="container space-y-8">
-        <div className="space-y-1">
-          <p className="text-author text-brand">Tadbirlarimiz</p>
+        <div className="title-block">
+          <p>Tadbirlarimiz</p>
           <h2 className="max-w-xl">
             <strong>Tadbirlarimiz ro'yhati bilan tanishing</strong>
           </h2>
@@ -31,7 +34,7 @@ export function EventsSection({ tabs, event, speakers }: EventsSectionProps) {
               <Button
                 onClick={() => setActiveTab(i)}
                 variant={activeTab === i ? "primary" : "outline"}
-                className={`${activeTab === i ? "" : "bg-white hover:!bg-brand hover:text-white hover:border-brand"}`}
+                className={`${activeTab === i ? "" : "bg-white hover:bg-brand! hover:text-white hover:border-brand"}`}
               >
                 {tab}
               </Button>
@@ -39,7 +42,25 @@ export function EventsSection({ tabs, event, speakers }: EventsSectionProps) {
           ))}
         </ul>
 
-        {activeTab === 1 ? (
+        {activeTab === 0 ? (
+          <section className="space-y-8">
+            <div className="space-y-1">
+              <h2>{EVENTS.length} ta tadbir</h2>
+              <p>
+                Quyida shu kungacha o'tkazgan tadbirlarimiz bilan tanishishingiz
+                mumkin bo'ladi.
+              </p>
+            </div>
+
+            <ul className="grid grid-cols-2 gap-8">
+              {EVENTS.map((ev) => (
+                <li key={ev.id}>
+                  <EventCard event={ev} />
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : activeTab === 1 ? (
           <section className="space-y-8">
             <div className="space-y-1">
               <h2>{event.date}</h2>
@@ -78,6 +99,24 @@ export function EventsSection({ tabs, event, speakers }: EventsSectionProps) {
                 Tadbirda qatnashishni istayman
               </Button>
             </div>
+          </section>
+        ) : activeTab === 2 ? (
+          <section className="space-y-8">
+            <div className="space-y-1">
+              <h2>{SELECTED_EVENTS.length} ta tanlangan tadbir</h2>
+              <p>
+                Jamiyatimiz tomonidan eng ko'p yoqtirilgan va yuqori baholangan
+                tadbirlar to'plami.
+              </p>
+            </div>
+
+            <ul className="grid grid-cols-2 gap-8">
+              {SELECTED_EVENTS.map((ev) => (
+                <li key={ev.id}>
+                  <EventCard event={ev} />
+                </li>
+              ))}
+            </ul>
           </section>
         ) : (
           <div className="hv-center py-24">

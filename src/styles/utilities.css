@@ -10,6 +10,24 @@
   @apply grid place-items-center;
 }
 
+@utility text-lead {
+  @apply text-lg;
+}
+
+@utility text-date {
+  @apply text-sm text-muted;
+}
+
+@utility text-author {
+  @apply text-xs font-montserrat font-bold tracking-widest uppercase;
+}
+
 @utility bd {
   @apply border border-red-500;
+}
+
+@utility text-card-muted {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--color-on-dark-muted);
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Nunito_Sans, Inter, DM_Sans } from "next/font/google";
+import { Montserrat, DM_Sans, Lora } from "next/font/google";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -8,22 +8,17 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
 });
 
-const nunitoSans = Nunito_Sans({
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
-  variable: "--font-nunito",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-inter",
-});
-
 const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-dm-sans",
+});
+
+const lora = Lora({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-lora",
 });
 
 export const metadata: Metadata = {
@@ -56,7 +51,7 @@ export default function RootLayout({
   return (
     <html
       lang="uz"
-      className={`${montserrat.variable} ${nunitoSans.variable} ${inter.variable} ${dmSans.variable}`}
+      className={`${montserrat.variable} ${dmSans.variable} ${lora.variable}`}
     >
       <body>{children}</body>
     </html>

@@ -14,7 +14,21 @@
   --color-border: var(--border-default);
 
   --font-montserrat: var(--font-montserrat-next);
-  --font-nunito: var(--font-nunito-next);
-  --font-inter: var(--font-inter-next);
   --font-dm-sans: var(--font-dm-sans-next);
+  --font-lora: var(--font-lora);
+
+  --color-card: #0d1b2a;
+  --color-on-dark-muted: rgba(255, 255, 255, 0.6);
+
+  --color-badge-meetup: var(--color-brand);
+  --color-badge-workshop: #f97316;
+  --color-badge-konferensiya: #6366f1;
+  --color-badge-hackathon: #ef4444;
+
+  --color-avatar-1: #22c55e;
+  --color-avatar-2: #ec4899;
+  --color-avatar-3: #06b6d4;
+  --color-avatar-4: #8b5cf6;
+  --color-avatar-5: #f97316;
+  --color-avatar-6: #ef4444;
 }

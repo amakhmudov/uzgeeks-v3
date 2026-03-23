@@ -85,8 +85,8 @@ export function AttendeesWorkAt() {
   return (
     <section className="section space-y-8">
       <div className="container">
-        <div className="space-y-1 text-center max-w-xl mx-auto">
-          <p className="text-author text-brand">Ishtirokchilar</p>
+        <div className="title-block text-center max-w-xl mx-auto">
+          <p>Ishtirokchilar</p>
           <h2>
             <strong>
               UzGeeks ishtirokchilari qaysi kompaniyalarda ishlashadi?
