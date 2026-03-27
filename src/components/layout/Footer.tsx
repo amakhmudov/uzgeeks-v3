@@ -8,12 +8,12 @@ export function Footer() {
         <div className="container space-y-4">
           <div className="text-center max-w-xl mx-auto">
             <h2 className="text-white">
-              <strong>Yangiliklarga obuna bo'ling</strong>
+              <strong>Yangiliklarga obuna bo&apos;ling</strong>
             </h2>
 
             <p className="text-neutral-400">
-              Yangi tadbirlar, spiker e'lonlari, IT hamjamiyat yangiliklaridan
-              to'gridan-to'g'ri habardor bo'ling
+              Yangi tadbirlar, spiker e&apos;lonlari, IT hamjamiyat yangiliklaridan
+              to&apos;gridan-to&apos;g&apos;ri habardor bo&apos;ling
             </p>
           </div>
 
@@ -25,7 +25,7 @@ export function Footer() {
             />
 
             <Button variant="primary" className="media-info">
-              Obuna bo'ling
+              Obuna bo&apos;ling
               <ArrowRight size={18} />
             </Button>
           </form>

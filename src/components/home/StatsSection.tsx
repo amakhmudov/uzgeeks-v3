@@ -20,7 +20,7 @@ export function StatsSection() {
             <p className="text-muted">
               UzGeeks meetuplari bu: IT Hamjamiyati tajribali mutahassislar
               tomonidan yosh IT mutahassislari bilan tajriba almashish, mustaqil
-              orttirilgan bilimlarni bo'lishish, ko'mak, tavsiya, maslahatlarni
+              orttirilgan bilimlarni bo&apos;lishish, ko&apos;mak, tavsiya, maslahatlarni
               berish.
             </p>
           </div>
@@ -28,8 +28,8 @@ export function StatsSection() {
           <blockquote>
             <p>
               UzGeeks meetup orqali kuchli IT mutahassislar, hamfikr, yahshi
-              insonlar bilan tanishdim, ko'p loyihada birga ishladik, haligacha
-              do'stmiz.
+              insonlar bilan tanishdim, ko&apos;p loyihada birga ishladik, haligacha
+              do&apos;stmiz.
             </p>
 
             <footer className="text-author text-brand">

@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import type { Speaker, Event } from "@/types/events";
 import { CircleCheckBig } from "lucide-react";
@@ -24,7 +23,7 @@ export function EventsSection({ tabs, event, speakers }: EventsSectionProps) {
         <div className="title-block">
           <p>Tadbirlarimiz</p>
           <h2 className="max-w-xl">
-            <strong>Tadbirlarimiz ro'yhati bilan tanishing</strong>
+            <strong>Tadbirlarimiz ro&apos;yhati bilan tanishing</strong>
           </h2>
         </div>
 
@@ -47,8 +46,8 @@ export function EventsSection({ tabs, event, speakers }: EventsSectionProps) {
             <div className="space-y-1">
               <h2>{EVENTS.length} ta tadbir</h2>
               <p>
-                Quyida shu kungacha o'tkazgan tadbirlarimiz bilan tanishishingiz
-                mumkin bo'ladi.
+                Quyida shu kungacha o&apos;tkazgan tadbirlarimiz bilan tanishishingiz
+                mumkin bo&apos;ladi.
               </p>
             </div>
 
@@ -86,7 +85,7 @@ export function EventsSection({ tabs, event, speakers }: EventsSectionProps) {
 
                     <div className="media-info">
                       <p className="text-author text-brand">{speaker.name}</p>
-                      <p className="text-muted">"{speaker.role}"</p>
+                      <p className="text-muted">&quot;{speaker.role}&quot;</p>
                     </div>
                   </div>
                 </li>
@@ -105,8 +104,8 @@ export function EventsSection({ tabs, event, speakers }: EventsSectionProps) {
             <div className="space-y-1">
               <h2>{SELECTED_EVENTS.length} ta tanlangan tadbir</h2>
               <p>
-                Jamiyatimiz tomonidan eng ko'p yoqtirilgan va yuqori baholangan
-                tadbirlar to'plami.
+                Jamiyatimiz tomonidan eng ko&apos;p yoqtirilgan va yuqori baholangan
+                tadbirlar to&apos;plami.
               </p>
             </div>
 

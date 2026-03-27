@@ -23,7 +23,7 @@ export function HeroSection({ event }: HeroSectionProps) {
         <h1 className="text-brand">NO Code?</h1>
 
         <h2 className="text-white">
-          Qanday qilib dasturlash tilisiz dasturiy ta'minot ishlab chiqish
+          Qanday qilib dasturlash tilisiz dasturiy ta&apos;minot ishlab chiqish
           mumkin?
         </h2>
 
@@ -41,7 +41,7 @@ export function HeroSection({ event }: HeroSectionProps) {
 
           <div className="media-info gap-x-4 justify-center">
             <Button variant="outline" className="text-white border-white">
-              Batafsil ma'lumot
+              Batafsil ma&apos;lumot
             </Button>
             <Button variant="primary">Qatnashaman</Button>
           </div>
