@@ -16,7 +16,11 @@
       "Bash(claude mcp add:*)",
       "Bash(claude mcp --help:*)",
       "Bash(claude:*)",
-      "mcp__figma__get_design_context"
+      "mcp__figma__get_design_context",
+      "Bash(npx vercel:*)",
+      "Bash(vercel --prod)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ]
   }
 }
