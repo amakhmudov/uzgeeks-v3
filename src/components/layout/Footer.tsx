@@ -1,31 +1,69 @@
-import { Github, Youtube, Send } from 'lucide-react'
+import { Github, Youtube, Send, ArrowRight } from "lucide-react";
+import { Button } from "../ui/Button";
 
 export function Footer() {
   return (
-    <footer>
-      <hr className="border-0 bg-divider h-px" />
-      <div className="container py-[--spacing-section]">
-        <div className="flex items-start justify-between text-[--font-size-sm] leading-[--line-height-normal] tracking-[--tracking-normal]">
-          <div className="flex flex-col gap-6">
-            <p className="text-body">© Copyright, All Rights Reserved by UzGeeks.</p>
-            <div className="flex gap-4">
-              <a href="#" className="text-body hover:text-brand transition-colors" aria-label="GitHub">
-                <Github size={20} />
-              </a>
-              <a href="#" className="text-body hover:text-brand transition-colors" aria-label="YouTube">
-                <Youtube size={20} />
-              </a>
-              <a href="#" className="text-body hover:text-brand transition-colors" aria-label="Telegram">
-                <Send size={20} />
-              </a>
-            </div>
+    <footer className="footer text-neutral-400">
+      <section className="py-32 bg-white/5 border-b border-brand/20">
+        <div className="container space-y-4">
+          <div className="text-center max-w-xl mx-auto">
+            <h2 className="text-white">
+              <strong>Yangiliklarga obuna bo'ling</strong>
+            </h2>
+
+            <p className="text-neutral-400">
+              Yangi tadbirlar, spiker e'lonlari, IT hamjamiyat yangiliklaridan
+              to'gridan-to'g'ri habardor bo'ling
+            </p>
           </div>
-          <div className="flex gap-8">
-            <a href="#" className="text-brand underline hover:no-underline transition-all">Terms</a>
-            <a href="#" className="text-brand underline hover:no-underline transition-all">Privacy policy</a>
+
+          <form className="w-fit mx-auto media-info items-stretch">
+            <input
+              type="email"
+              placeholder="Elektron pochta manzili"
+              className="w-86 bg-white/10 placeholder:text-neutral-400 border border-white/20 rounded px-4 focus:outline-none focus:ring focus:ring-brand"
+            />
+
+            <Button variant="primary" className="media-info">
+              Obuna bo'ling
+              <ArrowRight size={18} />
+            </Button>
+          </form>
+        </div>
+      </section>
+
+      <div className="container space-y-4 py-4">
+        <div className="media-info justify-between">
+          <p>
+            ©&nbsp;Copyright&nbsp;2026. Barcha Huquqlar UzGeeks tomonidan
+            himoyalangan.
+          </p>
+
+          <div className="media-info">
+            <a
+              href="#"
+              className="size-9 hv-center hover:text-brand transition"
+              aria-label="GitHub"
+            >
+              <Github size={20} />
+            </a>
+            <a
+              href="#"
+              className="size-9 hv-center hover:text-brand transition"
+              aria-label="YouTube"
+            >
+              <Youtube size={20} />
+            </a>
+            <a
+              href="#"
+              className=" size-9 hv-center hover:text-brand transition"
+              aria-label="Telegram"
+            >
+              <Send size={20} />
+            </a>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }
